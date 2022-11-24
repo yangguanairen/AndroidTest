@@ -9,8 +9,9 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.sena.module_two.databinding.ActivityMediaRecordBinding
-import com.sena.module_two.mediaRecord.aacDecoder.MyAudioTrack
-import com.sena.module_two.mediaRecord.aacDecoder.ReadAACFileThread
+import com.sena.module_two.mediaRecord.aacDecode.AacDecoder
+import com.sena.module_two.mediaRecord.utils.AACDecoder
+import com.sena.module_two.mediaRecord.utils.Mp3Information
 import java.io.File
 
 class MediaRecordActivity : AppCompatActivity() {
@@ -54,21 +55,12 @@ class MediaRecordActivity : AppCompatActivity() {
             } else {
                 MediaRecorder()
             }
-            /**
-             * 2890 + 1  => 2891
-             * 3928 + 1  => 1038
-             * 4010 + 3  => 84
-             * 5158 + 4  => 1149
-             * 5540 + 7  => 385
-             * 5610 + 2  => 65
-             * 6988 + 7  => 1383
-             */
         }
 
         recorder?.also {
             it.setAudioSource(MediaRecorder.AudioSource.MIC)
-            it.setOutputFormat(MediaRecorder.OutputFormat.AAC_ADTS)
-            it.setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
+            it.setOutputFormat(MediaRecorder.OutputFormat.MPEG_2_TS)
+            it.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB)
             it.setOutputFile(File(externalCacheDir, "Test.aac"))
 
             try {
@@ -82,8 +74,12 @@ class MediaRecordActivity : AppCompatActivity() {
     }
 
     private fun stopRecordAudio() {
+
+        val audioPath = externalCacheDir?.absolutePath + "/Record03.aac"
 //        AacTest.test(externalCacheDir?.absolutePath + "/Test.aac")
-        AacTest.test(externalCacheDir?.absolutePath + "/Record03.aac")
+//        AACDecoder.test(externalCacheDir?.absolutePath + "/Record03.aac")
+//        AacDecoder(audioPath).start()
+        Mp3Information(externalCacheDir?.absolutePath + "/emoshinobi - summer nite【sold】.mp3")
 
 //        val track = ReadAACFileThread(externalCacheDir?.absolutePath + "/Test.aac")
 

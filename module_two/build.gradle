@@ -17,7 +17,7 @@ kapt {
 android {
     defaultConfig {
         if (isModule.toBoolean()) {
-            applicationId "com.sena.module_one"
+            applicationId "com.sena.module_two"
         }
         compileSdk rootProject.ext.compileSdkVersion
         minSdk rootProject.ext.minSdkVersion
