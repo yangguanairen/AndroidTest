@@ -1,5 +1,6 @@
 package com.sena.module_two.mediaRecord.aacDecode
 
+import android.content.Context
 import android.media.*
 import android.util.Log
 import com.sena.module_two.mediaRecord.utils.AACDecoder
@@ -13,7 +14,7 @@ import java.nio.ByteBuffer
  * Date: 2022/11/21 17:43
  */
 
-class AacDecoder(audioPath: String) {
+class AacDecoder(private val context: Context, audioPath: String) {
 
     private val mAudioPath: String
 
@@ -48,7 +49,7 @@ class AacDecoder(audioPath: String) {
         createDecoder()
         createTrack()
 
-        DecodeThread(mAudioPath, mDecoder, mAudioTrack).start()
+        DecodeThread(context, mAudioPath, mDecoder, mAudioTrack).start()
     }
 
 

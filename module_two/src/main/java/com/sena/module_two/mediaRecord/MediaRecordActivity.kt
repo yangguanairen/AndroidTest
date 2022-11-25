@@ -9,9 +9,6 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.sena.module_two.databinding.ActivityMediaRecordBinding
-import com.sena.module_two.mediaRecord.aacDecode.AacDecoder
-import com.sena.module_two.mediaRecord.utils.AACDecoder
-import com.sena.module_two.mediaRecord.utils.Mp3Information
 import java.io.File
 
 class MediaRecordActivity : AppCompatActivity() {
@@ -78,8 +75,12 @@ class MediaRecordActivity : AppCompatActivity() {
         val audioPath = externalCacheDir?.absolutePath + "/Record03.aac"
 //        AacTest.test(externalCacheDir?.absolutePath + "/Test.aac")
 //        AACDecoder.test(externalCacheDir?.absolutePath + "/Record03.aac")
-//        AacDecoder(audioPath).start()
-        Mp3Information(externalCacheDir?.absolutePath + "/emoshinobi - summer nite【sold】.mp3")
+//        AacDecoder(this, audioPath).start()
+//        Mp3Information(externalCacheDir?.absolutePath + "/emoshinobi - summer nite【sold】.mp3")
+
+//        Thread {
+//            ConvertTest.test(this)
+//        }.start()
 
 //        val track = ReadAACFileThread(externalCacheDir?.absolutePath + "/Test.aac")
 

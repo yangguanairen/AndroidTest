@@ -72,4 +72,6 @@ dependencies {
 //    api 'com.github.adrielcafe:AndroidAudioConverter:0.0.8'
 
     api 'com.google.code.gson:gson:2.10'
+
+    api project(':lib_audio')
 }

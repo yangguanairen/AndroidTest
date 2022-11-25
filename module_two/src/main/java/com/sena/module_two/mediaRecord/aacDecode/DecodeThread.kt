@@ -1,9 +1,12 @@
 package com.sena.module_two.mediaRecord.aacDecode
 
+import android.content.Context
 import android.media.AudioTrack
 import android.media.MediaCodec
 import java.io.BufferedInputStream
+import java.io.File
 import java.io.FileInputStream
+import java.io.FileOutputStream
 import java.nio.ByteBuffer
 import kotlin.experimental.and
 import kotlin.system.measureTimeMillis
@@ -16,12 +19,19 @@ import kotlin.system.measureTimeMillis
  */
 
 class DecodeThread(
+    private val context: Context,
     private val filePath: String,
     private val decoder: MediaCodec,
     private val audioTrack: AudioTrack
 ): Thread() {
 
     private var failCount = 0
+
+    private val pcmStream: FileOutputStream
+
+    init {
+        pcmStream = FileOutputStream(File(context.externalCacheDir, "convertIn.pcm"))
+    }
 
     override fun run() {
         super.run()
@@ -95,8 +105,8 @@ class DecodeThread(
                 outputBuffer.clear()
                 // 可以把aac转换为pcm，但这里的pcm只是原始数据，其他软件识别不了
                 // 需要转换为wav，WavUtils.convertPcmToWav(pcmFile, sampleRate, channelCount, 16)
-                // pcmStream.write(outData)
-                // pcmStream.flush()
+                 pcmStream.write(outData)
+                 pcmStream.flush()
                 audioTrack.write(outData, 0, info.size)
                 decoder.releaseOutputBuffer(outputBufferIndex, false)
                 outputBufferIndex = decoder.dequeueOutputBuffer(info, timeoutUs)

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RouteTest">
         <activity
+            android:name=".pcmToMp3.PcmToMp3Activity"
+            android:exported="false" />
+        <activity
             android:name=".mediaRecord.MediaRecordActivity"
             android:exported="false" />
         <activity
@@ -25,10 +28,9 @@
             </intent-filter>
         </activity>
 
-
         <provider
-            android:authorities="com.sena.module_two.provider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.sena.module_two.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
