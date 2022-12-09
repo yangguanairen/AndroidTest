@@ -1,7 +1,7 @@
 package com.aitmed.noodlsdk.utilities.encoder
 
-import com.aitmed.audio.LameEncode
-import com.ecossdk.Other.DebugLog
+import android.util.Log
+import com.sena.audio.LameEncode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -35,12 +35,12 @@ class Mp3Encoder(private val data: EncoderData) : BaseEncoder(data) {
                 }
                 val convertedSize = LameEncode.encoder(shortArray, mp3Buffer, realSize)
                 if (convertedSize < 0) {
-                    DebugLog.d("Mp3 Encode ==> Error")
+                    Log.d("", "Mp3 Encode ==> Error")
                     // 这里不清楚是继续编码还是强行退出，有时候一小段数据的出错可能不影响视听
                     continue
                 }
                 try {
-                    DebugLog.e("Mp3 Encoder ==> Convert data, size: $convertedSize")
+                    Log.e("", "Mp3 Encoder ==> Convert data, size: $convertedSize")
                     outputStream.write(mp3Buffer, 0, convertedSize)
                 } catch (e: IOException) {
                     e.printStackTrace()

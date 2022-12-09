@@ -22,4 +22,16 @@ class ExampleUnitTest {
         val s = 0x00.toByte().toInt() == 0x00
         println("结果: " + s)
     }
+
+    @Test
+    fun test02() {
+        val n = 157
+
+
+        val h = (n shl 8)
+        val l = (n - h)
+
+        val r = (h.toInt() shr 8) or l.toInt()
+        println("h: $h, l: $l, r: $r")
+    }
 }

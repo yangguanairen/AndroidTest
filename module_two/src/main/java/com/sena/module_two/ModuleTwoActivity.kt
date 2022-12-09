@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sena.module_two.pcmToMp3.PcmToMp3Activity
 import com.sena.module_two.databinding.ActivityModuleTwoBinding
+import com.sena.module_two.fft.FFTActivity
 import com.sena.module_two.mediaRecord.MediaRecordActivity
 import java.util.AbstractMap
 
@@ -30,6 +31,7 @@ class ModuleTwoActivity : AppCompatActivity() {
         val dataList = arrayListOf<Map.Entry<String, Class<out AppCompatActivity>>>().apply {
             add(AbstractMap.SimpleEntry("录音功能测试", MediaRecordActivity::class.java))
             add(AbstractMap.SimpleEntry("PCM实时转MP3", PcmToMp3Activity::class.java))
+            add(AbstractMap.SimpleEntry("FFT音频可视化", FFTActivity::class.java))
         }
     }
 }

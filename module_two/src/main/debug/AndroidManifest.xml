@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RouteTest">
         <activity
+            android:name=".fft.FFTActivity"
+            android:exported="false" />
+        <activity
             android:name=".pcmToMp3.PcmToMp3Activity"
             android:exported="false" />
         <activity
