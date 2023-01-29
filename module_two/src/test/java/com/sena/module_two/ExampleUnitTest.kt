@@ -34,4 +34,13 @@ class ExampleUnitTest {
         val r = (h.toInt() shr 8) or l.toInt()
         println("h: $h, l: $l, r: $r")
     }
+
+    @Test
+    fun test03() {
+        try {
+
+        } catch (e: Exception) {
+            throw Exception("123")
+        }
+    }
 }

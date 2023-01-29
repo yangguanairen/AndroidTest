@@ -7,6 +7,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/18897/Desktop/AndroidTest/module_one/src/main/res/layout/activity_test.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/18897/Desktop/AndroidTest/module_one/src/main/res/layout/activity_transparent_bitmap.xml" value="0.20625" />
+        <entry key="..\:/Users/18897/Desktop/AndroidTest/module_one/src/main/res/layout/fragment_test.xml" value="0.2765625" />
         <entry key="..\:/Users/18897/Desktop/AndroidTest/module_two/src/main/res/layout/activity_convert.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/18897/Desktop/AndroidTest/module_two/src/main/res/layout/activity_fftactivity.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/18897/Desktop/AndroidTest/module_two/src/main/res/layout/activity_media_record.xml" value="0.2677083333333333" />

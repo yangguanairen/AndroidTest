@@ -54,6 +54,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\debug\\assets', 'src\\main\\assets'
+            }
+        }
+    }
 }
 
 dependencies {
@@ -68,4 +75,6 @@ dependencies {
 
     api "com.alibaba:arouter-api:$rootProject.ext.arouteVersion"
     kapt "com.alibaba:arouter-compiler:$rootProject.ext.arouteVersion"
+
+    api("com.squareup.okhttp3:okhttp:4.3.1")
 }

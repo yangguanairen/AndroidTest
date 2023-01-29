@@ -72,6 +72,8 @@ class AacDecoder(private val context: Context, audioPath: String) {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+
+        MediaPlayer().
     }
 
     private fun createDecoder() {

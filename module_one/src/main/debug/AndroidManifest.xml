@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RouteTest">
         <activity
+            android:name=".test.TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".transparent_bitmap.TransparentBitmapActivity"
+            android:exported="false" />
+        <activity
             android:name=".lock_pattern.LockPatternActivity"
             android:exported="false" />
         <activity
